@@ -1,0 +1,88 @@
+TC-01: Check that the room can be booked with valid data
+
+Description:
+Verify that a user can successfully book a room by providing valid data.
+
+Preconditions:
+
+Open the page https://automationintesting.online/
+
+Steps:
+
+1. Choose valid check-in date (20/04/2026)
+2. Choose valid check-out date (27/04/2026)
+3. Click on the "Check Availability" button
+4. Select the Single room and click on the "Book now" button
+5. Click on the "Reserve Now" button
+6. Fill in the booking form with valid data:
+Firstname - John
+Lastname - Tester
+Email - test@gmail.com
+Phone - +380931234567
+7. Click on the "Reserve Now" button
+
+Expected Result:
+
+Booking is successfully created
+Success message is displayed
+Booking details appear in the list/calendar
+
+
+TC-02: Check that the room can’t be booked with invalid data 
+
+Description:
+Verify that the system does not allow booking creation when invalid data is entered.
+
+Preconditions:
+
+Open the page https://automationintesting.online/
+
+Steps:
+
+1. Choose valid check-in date (20/04/2026)
+2. Choose valid check-out date (27/04/2026)
+3. Click on the "Check Availability" button
+4. Select the Single room and click on the "Book now" button
+5. Click on the "Reserve Now" button
+6. Fill in the booking form with valid data:
+Firstname - " "
+Lastname - " "
+Email - "invalid-email"
+Phone - "123abc"
+7. Click on the "Reserve Now" button
+
+Expected Result:
+
+Booking is not created
+Validation error messages are displayed
+
+
+TC-03: Check that the earlier booked dates show as Unavailable
+
+Description:
+Verify that dates that were previously booked are displayed as Unavailable and cannot be selected again.
+
+Preconditions:
+
+There is an existing booking for certain dates
+
+Steps:
+
+1. Choose valid check-in date (20/04/2026)
+2. Choose valid check-out date (27/04/2026)
+3. Click on the "Check Availability" button
+4. Select the Single room and click on the "Book now" button
+5. Click on the "Reserve Now" button
+6. Fill in the booking form with valid data:
+Firstname - John
+Lastname - Tester
+Email - test@gmail.com
+Phone - +380931234567
+7. Click on the "Reserve Now" button
+8. Click on the "Return Home" button
+9. Scroll down and select the Single room and click on the "Book now" button
+10. Check that these dates are unavailable in calendar
+
+Expected Result:
+
+Booked dates are marked as Unavailable
